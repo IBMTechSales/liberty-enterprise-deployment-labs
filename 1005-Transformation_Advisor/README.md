@@ -175,13 +175,22 @@ lab.
 1.  Clone the GitHub repo that contains lab artifacts needed for the
     lab.
 
-2.  Open a new terminal window on the “**server0.gym.lan**” VM
+    a.  Open a new terminal window on the “**server0.gym.lan**” VM
 
     ![](./images/media/image11.png)
 
-2.  Clone the GitHub repository required for the lab
+     b.  Clone the GitHub repository required for the lab
 
         git clone https://github.com/IBMTechSales/liberty_admin_pot.git
+
+    c. Navigate to the “lab-scripts” directory in the cloned repo
+
+        cd ~/liberty_admin_pot/lab-scripts 
+
+    d. Add the “execute” permissions to the lab-scripts directories and shell scripts
+
+        chmod -R 755 ./
+
 
 ## **Part 1: Review the on-prem WebSphere “PlantsByWebSphere” app that is used for the Liberty Runtime Modernization scenario**
 

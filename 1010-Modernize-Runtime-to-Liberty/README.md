@@ -264,6 +264,13 @@ lab.
 
         git clone https://github.com/IBMTechSales/liberty_admin_pot.git
 
+    c. Navigate to the “lab-scripts” directory in the cloned repo
+
+        cd ~/liberty_admin_pot/lab-scripts 
+
+    d. Add the “execute” permissions to the lab-scripts directories and shell scripts
+
+        chmod -R 755 ./
 
 ## Install WebSphere Liberty using the archive method
 
