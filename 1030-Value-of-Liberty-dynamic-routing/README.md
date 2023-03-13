@@ -1,4 +1,4 @@
-# Lab 1030: The value of Dynamic Routing
+# Lab 1030: The value of Dynamic Routing with Liberty
 
 ![banner](./images/media/image1.jpeg)
 
@@ -128,7 +128,7 @@ VM through the noVNC interface for the lab environment.
     Using this method, you can easily copy / paste text from the lab guide without having to use the noVNC clipboard.
 
 
-## Lab: The value of Dynamic Routing
+## Lab: The value of Dynamic Routing with Liberty
 
 For the Dynamic Routing function to work, the **dynamicRouting-1.0**
 feature is required only for the **collective controllers**.
