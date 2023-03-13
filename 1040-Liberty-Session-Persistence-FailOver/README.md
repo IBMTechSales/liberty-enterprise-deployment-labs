@@ -646,7 +646,6 @@ Persistence, which provides session cache via a **database provider.**
 
 This configuration allowed multiple servers to share the same session data, and the session data can be recovered from the session database in the event of a server failure.
 
-Specifically, in this lab, you were able to demonstrate persistence of the users shopping cart, so that items in the shopping cart are not lost
-in the event of a server failure.
+Specifically, in this lab, you were able to demonstrate persistence of the users shopping cart, so that items in the shopping cart are not lost in the event of a server failure.
 
 ![](./images/media/image57.png)
