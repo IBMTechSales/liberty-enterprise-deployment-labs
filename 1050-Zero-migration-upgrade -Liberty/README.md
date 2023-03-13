@@ -399,16 +399,15 @@ Joining remote members to a collective requires a couple of additional steps tha
 
     ![](./images/media/image24.png)
 
-  - When the script completes, the server **appServer2** with Liberty
+    - When the script completes, the server **appServer2** with Liberty
     22.0.0.12 is created and added to the collective.
 
-  - The **addMember.sh** script created a local Liberty server called
+    - The **addMember.sh** script created a local Liberty server called
     **appServer2** in the following directory on the **server1.gym.lan**  VM:
 
-    > **/opt/IBM/liberty-staging/22.0.0.12-appServer2/wlp/usr/servers**
+      > **/opt/IBM/liberty-staging/22.0.0.12-appServer2/wlp/usr/servers**
 
-  - The server uses **9082** and **9442** as its HTTP/HTTPS ports, as
-    defined ad script input parameters.
+    - The server uses **9082** and **9442** as its HTTP/HTTPS ports, as defined ad script input parameters.
 
 
 
