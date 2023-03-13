@@ -434,6 +434,7 @@ The ripple start will be manually performed in the Admin Center in this lab. How
   - Stop 22.0.0.8-appServer2
   - Start 22.0.0.12-appServer2
 
+  <br/>
 
 1.  Before starting the Liberty servers, you need to ensure the db2
     database used by the **PlantsByWebSphere** application is running.
