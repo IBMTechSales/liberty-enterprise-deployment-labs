@@ -301,7 +301,7 @@ In this lab, you use the same “**addMember.sh**” script used in previous lab
 
     >The servers are running **Liberty 22.0.0.8**. And the server should be in the “**Running**” state.
 
-    **a.  If the appServer1 or appServer2 servers are NOT running, go ahead and **start** them now.**
+5.  **If the appServer1 or appServer2 servers are NOT running, go ahead and **start** them now.**
 
     These servers were deployed in the previous labs.
  
