@@ -297,9 +297,9 @@ In this lab, you use the same “**addMember.sh**” script used in previous lab
 
 4.  Click the **Servers** view to display the servers in the Collective.
 
-    **Note:** You should already see two servers deployed in the collective.
+    >**Note:** You should already see two servers deployed in the collective.
 
-    The servers are running **Liberty 22.0.0.8**. And the server should be in the “**Running**” state.
+    >The servers are running **Liberty 22.0.0.8**. And the server should be in the “**Running**” state.
 
     a.  If the appServer1 or appServer2 servers are NOT running, go ahead and **start** them now.
 
