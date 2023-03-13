@@ -307,18 +307,20 @@ In this lab, you use the same “**addMember.sh**” script used in previous lab
  
     ![](./images/media/image20.png)
 
+
 ### **Add a collective member to the local host VM, server0.gym.lan**
 
 Use the automation script to deploy the Liberty server from the server package you created earlier and join the member to the collective.
 
+**The script below performs the following:**
+   
+   >- deploy the server package for Liberty version 22.0.0.12
+   >- Apply overrides for the HTTP and HTTPS ports with “9081 / 9441”
+   >- Rename the default server name with “appServer1”
+   >- Join the server to the collective
+
 1.  From a terminal window on the VM, run the command below to create a local Liberty collective member on **server0.gym.lan** VM using the 22.0.0.12 server package.
 
-    **The command below will do the following:**
-
-  - deploy the server package for Liberty version 22.0.0.12
-  - Apply overrides for the HTTP and HTTPS ports with “9081 / 9441”
-  - Rename the default server name with “appServer1”
-  - Join the server to the collective
 
         ~/liberty_admin_pot/lab-scripts/addMember.sh -n appServer1 -v 22.0.0.12 -p 9081:9441 -h server0.gym.lan
 
