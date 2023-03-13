@@ -334,7 +334,7 @@ To configure dynamic routing for a Liberty collective, you need to perform the f
 
     The generated plug-in configuration file and keys must be copied to the appropriate locations to establish the secure connection.
 
-The high-level steps to configure Dynamic Routing are listed below, as described in the IBM documentation:
+**The high-level steps to configure Dynamic Routing are listed below, as described in the IBM documentation:**
 
 <table>
 <tbody>
