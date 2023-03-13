@@ -25,8 +25,7 @@ After completing the lab, you should have an appreciation for how simple
 Liberty is to manage though automation, which equally applies to
 integration with your own Devops tools.
 
-**<span class="underline">This lab contains the following hands-on
-activities:</span>**
+**This lab contains the following hands-on activities:**
 
   - Build Liberty server packages
 
@@ -40,7 +39,7 @@ activities:</span>**
 
   - Validate the deployment and test the application
 
-The lab environment consists of two Host VMs:
+**The lab environment consists of two Host VMs:**
 
   - server0.gym.lan
 
@@ -114,27 +113,27 @@ VM through the noVNC interface for the lab environment.
 
 1.  Access the lab environment from your web browser.
 
-> a. When the environment is provisioned, right-mouse click on the
-> **Published Service** link/ Then select “**Open link in New Tab**”
-> from the context menu.
-> 
-> ![](./images/media/image4.png)
-> 
-> b. Click on the **"vnc.html"** link to open the lab environment
-> through the **noVNC** interface.
-> 
-> ![](./images/media/image5.png)
-> 
-> c. Click the **Connect** button
-> 
-> ![](./images/media/image6.png)
-> 
-> d. Enter the password as: **passw0rd**. Then click the **Send
-> Credentials** button to access the lab environment.
-> 
-> **Note:** That is a numeric zero in passw0rd
-> 
-> ![](./images/media/image7.png)
+    a. When the environment is provisioned, right-mouse click on the
+ **Published Service** link/ Then select “**Open link in New Tab**”
+ from the context menu.
+ 
+    ![](./images/media/image4.png)
+ 
+    b. Click on the **"vnc.html"** link to open the lab environment
+ through the **noVNC** interface.
+ 
+    ![](./images/media/image5.png)
+ 
+    c. Click the **Connect** button
+ 
+    ![](./images/media/image6.png)
+ 
+    d. Enter the password as: **passw0rd**. Then click the **Send
+ Credentials** button to access the lab environment.
+ 
+    **Note:** That is a numeric zero in passw0rd
+ 
+   ![](./images/media/image7.png)
 
 2.  Login to the **server0** VM using the credentials below:
     
@@ -144,42 +143,36 @@ VM through the noVNC interface for the lab environment.
 
 ## **Tips for working in the lab environment**
 
-1.  You can use your Browsers **zoom in** and **zoom out** options to
-    resize the virtual desktop to fit your screen.
+1.  You can use your Browsers **zoom in** and **zoom out** options to  resize the virtual desktop to fit your screen.
 
-> The examples below are using Firefox and Chrome browsers.
+    The examples below are using Firefox and Chrome browsers.
 
-  - Firefox example:
+    - Firefox example:
 
-> ![fit to window](./images/media/image8.png)
+       ![fit to window](./images/media/image8.png)
 
-  - Chrome example:
+    - Chrome example:
 
-> ![fit to window](./images/media/image9.png)
+       ![fit to window](./images/media/image9.png)
 
 2.  You can copy / paste text from the lab guide into the lab
     environment using the clipboard in the noVNC viewer.
 
-> a. Copy the text from the lab guide that you want to paste into the
-> lab environment
-> 
-> b. Click the **Clipboard** icon and **paste** the text into the noVNC
-> clipboard
-> 
-> ![fit to window](./images/media/image10.png)
-> 
-> c. Paste the text into the VM, such as to a terminal window, browser
-> window, etc.
-> 
-> d. Click on the **clipboard** icon again to close the clipboard
-> 
-> **NOTE:** Sometimes pasting into a Terminal window in the VM does not
-> work consistently. In this case you might try again or paste the text
-> into a **Text Editor** in the VM, and then paste it into the Terminal
-> window in the VM.
+    a. Copy the text from the lab guide that you want to paste into the lab environment
+ 
+    b. Click the **Clipboard** icon and **paste** the text into the noVNC clipboard
+ 
+    ![fit to window](./images/media/image10.png)
+ 
+    c. Paste the text into the VM, such as to a terminal window, browser window, etc.
+ 
+    d. Click on the **clipboard** icon again to close the clipboard
+ 
+    **NOTE:** Sometimes pasting into a Terminal window in the VM does not work consistently. In this case you might try again or paste the text into a **Text Editor** in the VM, and then paste it into the Terminal  window in the VM.
 
 3.  An alternative to using the noVNC Copy / Paste option, you may
     consider opening the lab guide in a web browser inside of the VM.
+    
     Using this method, you can easily copy / paste text from the lab
     guide without having to use the noVNC clipboard.
 
