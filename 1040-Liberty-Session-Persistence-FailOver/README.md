@@ -12,8 +12,8 @@ Need support? Contact **Kevin Postreich, Yi Tang**
 <table>
 <tbody>
 <tr class="odd">
-<td><h2 id="sign-caution"><img src="./images/media/image2.png" style="width:1.20833in;height:0.73125in" alt="sign-caution" /></h2></td>
-<td><h2><strong>IMPORTANT: Please read!</strong></h2>
+<td><img src="./images/media/image2.png" style="width:1.20833in;height:0.73125in" alt="sign-caution" /></td>
+<td><strong>IMPORTANT: Please read!</strong>
 <p>This lab requires the completion of <strong>Lab 1030 – Dynamic Routing</strong> of this series. </p>
 <p> In other words, you cannot perform this lab until you have completed <strong>Lab 1030 – Dynamic Routing</strong> </p></td>
 </tr>
