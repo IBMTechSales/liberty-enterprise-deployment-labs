@@ -786,12 +786,8 @@ Joining remote members to a collective requires a couple of additional steps tha
     <td><img src="./images/media/image12.png" style="width:1.76042in;height:0.76042in" alt="sign-info" /></td>
     <td><p>When running the script, it requires <strong>user interaction</strong>.</p>
     <ul>
-    <li><p>You will need to reply to <strong>accept certificate chains (Multiple times)</strong> as Liberty commands are run to join the server to the collective.</p></li>
-    <li><p>You will need to enter the <strong>password for the server1.gym.lan VM</strong> <strong>(Multiple times)</strong> as the script interacts with the remote host.</p></li>
-    </ul>
-    <blockquote>
-    <p>This is because unlike tWAS where a node agent is installed, Liberty is agentless and relies on OS and SSH credentials for remote host access and operation.</p>
-    </blockquote></td>
+    <li><p>You will need to reply to <strong>accept certificate chains (Multiple times)</strong> as Liberty commands are run to register the remote hoste and join the Liberty server to the collective.</p></li>
+    </td>
     </tr>
     </tbody>
     </table>
@@ -802,11 +798,6 @@ Joining remote members to a collective requires a couple of additional steps tha
 
     > **NOTE:** You will get prompted multiple time to accept the certificate chain as the script execute various commands.
 
-    c.  Enter **IBMDem0s\!** when prompted with request
-    **techzone@server1.gym.lan's password:**
-
-    > **NOTE:** You will get prompted three times for the password, once for each command that interacts with the remote host.
- 
     ![](./images/media/image45.png)
  
     When the script completes, the server **appServer2** is created and added to the collective.
