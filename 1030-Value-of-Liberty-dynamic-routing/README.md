@@ -531,7 +531,6 @@ should only be executed if you have not already completed Lab\_1020.
     <td><p>When running the script, it requires <strong>user interaction</strong>.</p>
     <ul>
     <li><p>You will need to reply to <strong>accept certificate chains (Multiple times)</strong> as Liberty commands are run to join the server to the collective.</p></li>
-    <li><p>You will need to enter the <strong>password for the server1.gym.lan VM</strong> <strong>(Multiple times)</strong> as the script interacts with the remote host</p></li>
     </ul></td>
     </tr>
     </tbody>
@@ -542,11 +541,6 @@ should only be executed if you have not already completed Lab\_1020.
     b.  Enter **"y"** when prompted with question “**Do you want to accept the     above certificate chain? (y/n)**”.
 
     >**NOTE:** You will get prompted multiple time to accept the certificate chain as the script execute various commands.
-
-    c. Enter **IBMDem0s\!** when prompted with request
-    **techzone@server1.gym.lan's password:**
-
-    >**NOTE:** You will get prompted three times for the password, once for each command that interacts with the remote host.
 
     ![](./images/media/image26.png)
 
