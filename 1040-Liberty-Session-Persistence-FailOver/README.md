@@ -547,6 +547,9 @@ The configuration includes the following:
     - In this lab the clone ID is the Liberty server name.
 
 
+2. **Close** the editor. DO NOT save any changes.
+
+
 ## **Part 4: Testing the application with Session Persistence configured**
 
 With session persistence enabled, you can repeat the same testing steps used in **Part 2** of the lab to verify the high availability and session failover scenario.
