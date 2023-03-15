@@ -493,10 +493,7 @@ automation script that adds the configuration for
 
         /home/techzone/liberty_admin_pot/lab-scripts/applyOverrides.sh -n appServer2 -v 22.0.0.8 -h server1.gym.lan SESSIONDB
 
-    a.  Enter **IBMDem0s\!** when prompted with request for
-    **techzone@server1.gym.lan's** password
-
-    The Liberty session persistence is now configured for **appServer1** and **appServer2**.
+     The Liberty session persistence is now configured for **appServer1** and **appServer2**.
 
 
 
