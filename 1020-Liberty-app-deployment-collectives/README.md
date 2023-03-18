@@ -691,7 +691,7 @@ collective.
 
       > **/home/techzone/lab-work/liberty-staging/22.0.0.8-appServer1/wlp/usr/servers**
 
-3.  Go back to the Liberty collective **Admin Center** page, you can see that the **appServer1** server is added to the collective ad a new server. The Server is in the “**Stopped**” state.
+3.  Go back to the Liberty collective **Admin Center** page, you can see that the **appServer1** server is added to the collective as a new server. The Server is in the “**Stopped**” state.
 
     ![](./images/media/image38.png)
 
@@ -766,24 +766,6 @@ Joining remote members to a collective requires a couple of additional steps tha
     ports.
 
         ~/liberty_admin_pot/lab-scripts/addMember.sh -n appServer2 -v 22.0.0.8 -p 9082:9442 -h server1.gym.lan
-
-    <table>
-    <tbody>
-    <tr class="odd">
-    <td><img src="./images/media/image12.png" style="width:1.76042in;height:0.76042in" alt="sign-info" /></td>
-    <td><p>When running the script, it requires <strong>user interaction</strong>.</p>
-    <ul>
-    <li><p>You will need to reply to <strong>accept certificate chains (Multiple times)</strong> as Liberty commands are run to register the remote hoste and join the Liberty server to the collective.</p></li>
-    </td>
-    </tr>
-    </tbody>
-    </table>
-
-    a.  Enter **y** when prompted with question “**Do you wish to continue with the parameters specified? (y/n)?**”.
-
-    b.  Enter **y** when prompted with question “**Do you want to accept the above certificate chain? (y/n)**”.
-
-    > **NOTE:** You will get prompted multiple time to accept the certificate chain as the script execute various commands.
 
     ![](./images/media/image45.png)
  
