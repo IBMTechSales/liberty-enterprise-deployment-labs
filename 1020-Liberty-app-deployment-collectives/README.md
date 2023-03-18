@@ -619,10 +619,10 @@ sample applications, and default server configuration overrides.
 
 The **collectiveMember-1.0** feature was installed and enabled for the Liberty server that is in the server package.
 
-In this lab, you use the “**addMember.sh**” scrip to deploy the server packages to the nodes, create the collective members, and join the members to the collective.
+In this lab, you use the “**addMember.sh**” script to deploy the server packages to the nodes, create the collective members, and join the members to the collective.
 
 
-### The addMember.sh script provides the following capabilities:
+### The addMember.sh script performs the following tasks:
 
   -  Register the Host machine if it is remote VM from the Controller
 
@@ -680,20 +680,8 @@ collective.
     >-  Join the liberty server to the collective
 
         ~/liberty_admin_pot/lab-scripts/addMember.sh -n appServer1 -v 22.0.0.8 -p 9081:9441 -h server0.gym.lan
-
-    <table>
-    <tbody>
-    <tr class="odd">
-    <td><img src="./images/media/image12.png" style="width:1.26042in;height:0.76042in" alt="sign-info" /></td>
-    <td><p>When running the script, it requires <strong>user interaction</strong>.</p>
-    <p>You will need to reply to <strong>accept certificate chains</strong> as Liberty commands are run to join the server to the collective.</p></td>
-    </tr>
-    </tbody>
-    </table>
-
-    a.  Enter **y** when prompted with question “**Do you wish to continue with the parameters specified? (y/n)?**”.
-
-    b.  Enter **y** when prompted with question “**Do you want to accept the above certificate chain? (y/n)**”.
+    
+   
 
     ![](./images/media/image37.png)
  
