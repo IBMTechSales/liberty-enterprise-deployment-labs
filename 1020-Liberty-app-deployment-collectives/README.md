@@ -907,7 +907,7 @@ the collective.
     
     a.  Open a new tab on the Firefox browser and test PlantsByWebSphere on **appServer1**, which is on **server0.gym.lan**
 
-        http://server0.gym.lan:9081/PlantsByWebSphere
+        https://server0.gym.lan:9441/PlantsByWebSphere
 
     **Note:** If you see the “Warning: Potential Security Risk Ahead”, > click **Advanced..-\>Accept Risk and Continue** to continue.
 
@@ -921,8 +921,11 @@ the collective.
     
     a.  Open a new tab on the Firefox browser and test PlantsByWebSphere on **appServer2**, which is on **server1.gym.lan**
 
-        http://server1.gym.lan:9082/PlantsByWebSphere
+        http://server1.gym.lan:9442/PlantsByWebSphere
 
+    **Note:** If you see the “Warning: Potential Security Risk Ahead”, > click **Advanced..-\>Accept Risk and Continue** to continue.
+    
+    ![](./images/media/image61-2.png)
 
 ### **Test the WhereAmI application:** 
 
@@ -931,7 +934,7 @@ the collective.
     a.  Open a new tab on the Firefox browser and test WhereAmI on
         **appServer1**, which is on **server0.gym.lan**
 
-        http://server0.gym.lan:9081/WhereAmI
+        https://server0.gym.lan:9441/WhereAmI
 
     ![](./images/media/image63.png)
 
@@ -941,7 +944,7 @@ the collective.
     a.  Open a new tab on the Firefox browser and test WhereAmI on
         **appServer2**, which is on **server1.gym.lan**
 
-        http://server1.gym.lan:9082/WhereAmI
+        https://server1.gym.lan:9442/WhereAmI
 
     ![](./images/media/image64.png)
 
