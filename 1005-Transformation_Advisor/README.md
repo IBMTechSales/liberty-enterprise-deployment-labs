@@ -465,7 +465,7 @@ Now, let’s run the data collector.
 
         mkdir ~/Student/lab_1005
 
-        tar xvfz transformationadvisor-Linux_WAS855.tgz –directory ~/Student/lab_1005
+        tar xvfz transformationadvisor-Linux_WAS855.tgz --directory ~/Student/lab_1005
 
 
     The data collector utility will be extracted to:
