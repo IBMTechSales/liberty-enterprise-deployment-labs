@@ -854,7 +854,7 @@ which you need to ensure is up and running.
 2.  In the server details page, click the dropdown menu icon of
     **appServer1** and select **Start** to start the server.
 
-    ![Graphical user interface, application Description automatically generated](./images/media/image52.png)
+    ![Graphical user interface, application Description automatically generated](./images/media/image52-a.png)
  
     **Note:** If prompted for credentials, enter the Admin Center username and password as: **admin**/**admin**.
 
