@@ -23,7 +23,7 @@ Liberty has extremely fast start-up times, requires no server restarts
 to pick up changes, and is easy to configure with a simple
 human-readable XML configuration file.
 
-Runtime modernization gets the application to the WebSphere Liberty the
+Runtime modernization gets the application to the WebSphere Liberty with the 
 least amount of effort. The goal is to achieve efficiencies and agility
 based on the value propositions of WebSphere Liberty, while keeping the
 existing application code changes to a minimum.
@@ -57,16 +57,14 @@ to the Liberty runtime matters and how it brings significant value and
 efficiencies to your business.
 
 For your reference, here is a full article on the high value of
-WebSphere Liberty. But let’s just hit some of the highlights that are of
-the most significant to you, the WebSphere Administrator, in this short
-overview.
+WebSphere Liberty. But let’s just hit some of the key highlights in this short overview.
 
 **Read the full article**:
 [ibm.biz/6ReasonsWhyLiberty](https://ibm.biz/6ReasonsWhyLiberty)
 
 ![](./images/media/image3.png)
 
-**Low operating costs**
+### Low operating costs
 
 Liberty and IBM Semeru Java are designed to be extremely efficient in
 terms of memory and disk, while also delivering industry leading
@@ -82,7 +80,8 @@ application efficiency.
 
 ![](./images/media/image4.png)
 
-**Just enough runtime – Right sized for your specific application**
+### Just enough runtime – Right sized for your specific application
+
 
 Liberty is a fully **modular runtime**, letting you pick and choose the
 capabilities you need for your application. With Liberty, you have one
@@ -92,7 +91,7 @@ monoliths and anything in between.
 
 ![](./images/media/image5.png)
 
-**Zero migration**
+### Zero migration
 
 With traditional Application Servers, in fact any other runtime,
 application code migration is required when upgrading to newer versions
@@ -114,7 +113,7 @@ change.
 
 ![](./images/media/image6.png)
 
-**Continuous Delivery - Low maintenance, zero technical debt**
+### Continuous Delivery - Low maintenance, zero technical debt
 
 Because of the Liberty **feature model** and **Zero Migration**
 architecture, Liberty follows a single stream delivery model.
@@ -282,7 +281,7 @@ You will use the Linux VM environment that has been prepared for the lab
 and includes the following software:
 
   - The **Liberty** archive has been downloaded to
-    **/home/techzone/Student/LabFiles/swlp-kernel-22.0.0.8** directory
+    **/home/techzone/Student/LabFiles/wlp-kernel-22.0.0.8** directory
 
   - The **IBM JDK 1.8** is installed in **/opt/IBM/ibm-java-x86\_64-80**
     directory
@@ -298,7 +297,7 @@ steps:
 
 2.  Navigate to the techzone user’s home directory:
 
-        cd /home/techzone/Student
+        cd /home/techzone
 
 3.  Create a directory named “lab\_1010” where you will install
     WebSphere Liberty. Then navigate to that directory
@@ -308,10 +307,9 @@ steps:
         cd /home/techzone/Student/lab_1010
 
 4.  Extract the WebSphere Liberty Kernel package to the
-    **\~/Student/lab\_1020** directory.
+    **\~/Student/lab\_1010** directory.
 
-    The Liberty Archive is a Java “zip” file. To extract the archive, use
- the unzip command.
+    The Liberty Archive is a “zip” file. To extract the archive, use the unzip command.
 
         unzip ~/Student/LabFiles/wlp-kernel-22.0.0.8.zip -d ~/Student/lab_1010
 
@@ -378,11 +376,10 @@ steps:
  Liberty’s server configuration file, server.xml, which was generated
  by Transformation Advisor.
  
-    **Congratulations\! You have just installed Liberty in the “lab\_1010”
- directory using the archive install method**.
+    **Congratulations\! You have just installed Liberty using the archive install method**.
 
 
-## Create a new Liberty server that will be used to run the sample application, “PlantsByWebSphere”
+## Create a new Liberty server that will run the sample application, “PlantsByWebSphere”
 
 1.  From the terminal window, ensure you are at the Liberty runtime
     installation directory
@@ -499,7 +496,7 @@ containers was also generated but is not the focus of this lab.
 <tr class="odd">
 <td><img src="./images/media/image17.png" style="width:1.22816in;height:0.57292in" /></td>
 <td><p><strong>Note:</strong> Using the Transformation Advisor data collection utility is outside the scope of this lab.</p>
-<p>Lab_1005 in this PoT series showcased how to use the data collector and generate the migration bundle that you will leverage in this lab.</p></td>
+<p>Lab_1005 in this PoT series showcases how to use the data collector and generate the migration bundle that you will leverage in this lab.</p></td>
 </tr>
 </tbody>
 </table>
@@ -546,6 +543,7 @@ Transformation Advisor in the migration bundle include:
   
   - **Dockerfile**: Create the Docker image for the application
 
+  <br/>
 
 1.  Unzip the migration bundle artifacts to a new folder on the
     server0.gym.lan VM
@@ -559,10 +557,13 @@ Transformation Advisor in the migration bundle include:
     
         unzip ~/liberty_admin_pot/pbw_migrationBundle.zip -d ~/Student/lab_1010/pbw-bundle
 
+    b. List the contents of the "pbw-bundle" directory
+
+        ls -l
 
     ![](./images/media/image26.png)
 
-    Next, you will leverage the **server.xml** fie from the migration bundle
+    Next, you will leverage the **server.xml** file from the migration bundle
 of artifacts to facilitate faster time to value when configuring and
 deploying the PlantsByWebSphere application to a new WebSphere Liberty
 Server environment.
@@ -739,9 +740,7 @@ the PlantsByWebSphere application to properly run in WebSphere Liberty:
 
 The WebSphere Liberty server named “**pbwServer**”, which you created
 earlier in the lab, only contains the minimal configuration needed to
-start the Liberty server. The server configuration file. Application
-database libraries, and the PlantsByWebSphere application must all be
-configured and added to the Liberty server.
+start the Liberty server. The server configuration file, application database libraries, and the PlantsByWebSphere application must all be configured and added to the Liberty server.
 
 In this section of the lab, you will perform the following activities to
 complete the WebSphere Liberty configuration for the “**pbwServer**” to
@@ -763,8 +762,8 @@ The “**dropins**” directory is a monitored directory in Liberty, meaning
 that when application binaries such as WAR, EAR JAR files are dropped
 into the directory, Liberty will automatically deploy and start the
 application. Use of this directory is great for development, but not
-recommended for deployments to production environments where the
-“**apps**” directory, which is not monitored, is intended to be used.
+recommended for deployments to production environments, whereas the
+“**apps**” directory, which is not monitored, is intended to be used for production deployments.
 
 In this lab, you will copy the PlantsByWebSphere EAR file into the
 “**apps**” directory, which will get deployed when the Liberty server
@@ -876,6 +875,13 @@ is started or restarted.
     ![](./images/media/image42.png)
 
 
+6. Show the size of the WebSphere Liberty installation directory
+
+        du -ch --max-depth=0 /home/techzone/Student/lab_1010/wlp
+
+    Note that the disk space used by WebSphere Liberty, including the db2 libraries and the application is only **113 MB**.
+
+    ![](./images/media/liberty-size.png)     
 
 ## **Start the DB2 application database for PlantsByWebSphere**
 
@@ -1000,6 +1006,8 @@ Server to start.
 You then learned how to use Transformation Advisors generated deployment
 accelerators from the migration bundle to configure and run the migrated
 application in WebSphere Liberty in stand-alone mode on a VM.
+
+You learned how little disk space WebSphere Liberty requires, when right-sized based on the application needs. 
 
 Transformation Advisor accelerates application migration to Liberty and
 helps minimize errors and risks while accelerating time to market.
