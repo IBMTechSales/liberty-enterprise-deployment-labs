@@ -909,6 +909,8 @@ the collective.
 
         http://server0.gym.lan:9081/PlantsByWebSphere
 
+    **Note:** If you see the “Warning: Potential Security Risk Ahead”, > click **Advanced..-\>Accept Risk and Continue** to continue.
+
     ![](./images/media/image61.png)
 
     b.  In the application, click on the “**Flowers**” tab to view the catalog of flowers. This action retrieves catalog details from the application DB2 database.
