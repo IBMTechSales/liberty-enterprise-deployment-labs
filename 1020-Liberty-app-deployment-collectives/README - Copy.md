@@ -1,4 +1,4 @@
-# Lab 1020: Liberty application deployments in Collectives
+**Lab 1020: Liberty application deployments in Collectives**
 
 ![banner](./images/media/image1.jpeg)
 
@@ -8,6 +8,7 @@
 
 Need support? Contact **Kevin Postreich, Yi Tang**
 
+## 
 
 ## **Introduction to the Lab**
 
@@ -369,7 +370,7 @@ collective.
 
         - Copy the Server package from the Maven “target” directory to the new “working Directory” used in the labs.
 
-          > **/home/techzone/lab-work/packagedServers/22.0.0.8-pbwServerX.zip**
+        > **/home/techzone/lab-work/packagedServers/22.0.0.8-pbwServerX.zip**
  
     ![](./images/media/image18.png)
  
@@ -386,7 +387,7 @@ collective.
 
     ![](./images/media/image21.png)
 
-    b.  From the file explorer, navigate to
+2.  From the file explorer, navigate to
     **techzone/lab-work/packagedServers** directory.
 
     **TIP:** the server package is named based on the version of Liberty in the package, and the placeholder server name; “**22.0.0.8-pbwServerX.zip**".
