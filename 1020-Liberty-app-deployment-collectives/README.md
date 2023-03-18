@@ -921,7 +921,7 @@ the collective.
     
     a.  Open a new tab on the Firefox browser and test PlantsByWebSphere on **appServer2**, which is on **server1.gym.lan**
 
-        http://server1.gym.lan:9442/PlantsByWebSphere
+        https://server1.gym.lan:9442/PlantsByWebSphere
 
     **Note:** If you see the “Warning: Potential Security Risk Ahead”, > click **Advanced..-\>Accept Risk and Continue** to continue.
     
