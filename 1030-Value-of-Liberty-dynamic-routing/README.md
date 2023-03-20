@@ -402,11 +402,6 @@ In this section, you will use an automation script, which we provide in the lab 
 
         /home/techzone/liberty_admin_pot/lab-scripts/setupDynamicRouting.sh
 
-    a.  Enter **y** when prompted with question “**Do you want to accept the above certificate chain? (y/n)**”.
-
-    ![Text Description automatically
- generated](./images/media/image22.png)
- 
     Once the command is completed, the pug-in configuration files are  created and configured for the IHS server.
  
     ![Text Description automatically
@@ -706,7 +701,7 @@ In the example, requests that match **“/WhereAmI%”** will be routed to the L
 
 1.  From the browser, go to the **WhereAmI** application URL again:
 
-        http://server0.gym.lan:8080/WhereAmI
+        https//server0.gym.lan:8443/WhereAmI
 
 2.  Refresh the browser window for **WhereAmI** so you can see that the requests are getting routed to **appServer1** and **appServer2** accordingly as you observed in the previous section of the lab.
 
