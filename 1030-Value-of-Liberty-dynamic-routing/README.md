@@ -247,9 +247,9 @@ expected
 
 4.  From the browser, go to the **IHS** URL:
 
-        http://server0.gym.lan:8080
+        https://server0.gym.lan:8443
 
-    **Note:** The HTTP server is running on port **8080**, not the default port 80
+    **Note:** The HTTP server is running on secure port **8443**, not the default secure port 443
  
     The **IHS** home page is displayed.
  
@@ -409,6 +409,9 @@ In this section, you will use an automation script, which we provide in the lab 
  
     Once the command is completed, the pug-in configuration files are  created and configured for the IHS server.
  
+    ![Text Description automatically
+ generated](./images/media/new-image004.png)
+
 **Dynamic routing in the Liberty Collective is now ready to use\!**
  
 
@@ -480,7 +483,7 @@ At this point, you should have two Liberty collective members should now be crea
   - appServer1
   - appServer2
 
-    In this section, you will **start** these two servers from the Liberty Admin Center.
+    In this section, you will **start** these two servers from the Liberty Admin Center if they are not already started. 
 
     ![](./images/media/image28.png)
 
@@ -518,22 +521,29 @@ which you need to ensure is up and running.
 
         docker start db2_demo_data
 
-2.  To start the collective member from the Liberty Admin Center **Explorer** page, click the **SERVERS** icon to go to its details page.
+2.	Access the Liberty Admin Center from the browser
+
+    a.	Enter the login credentials as: admin / admin
+
+        https://server0.gym.lan:9491/adminCenter
+
+3.	Go to the Servers view in the Admin Center
+
+    a.	From the Admin Center, go to the  **Explorer** page, click the **SERVERS** icon to go to its details page.
 
     ![](./images/media/image30.png)
 
-3.  In the server details page, click the dropdown menu icon of
-    **appServer1** and select **Start** to start the server.
+4.	Start appServer1
 
-    ![Graphical user interface, application Description automatically  generated](./images/media/image31.png)
- 
-    **Note:** If prompted, enter the Admin Center username and password as:  **admin** / **admin**
+    a.	In the server details page, click the dropdown menu icon of **appServer1** and select **Start** to start the server.
 
-4.  Click **Start** to confirm the start **appServer1** server command.
+    ![](./images/media/image31.png)
+
+    b.  Click **Start** to confirm the start **appServer1** server command.
 
     ![](./images/media/image32.png)
  
-    Server **appServer1** will get started, and you can see it is "Running" status with 2 applications. 
+    Server **appServer1** will get started, and you can see it is "**Running**" status with 2 applications. 
  
     ![Graphical user interface, application Description automatically  generated](./images/media/image33.png)
 
@@ -584,7 +594,7 @@ However, without session persistence configured, any session data is lost, such 
 
 1.  To access the **PlantsByWebSphere** application through IHS server     and plugin, open a new browser window and enter the application URL as:
 
-        http://server0.gym.lan:8080/PlantsByWebSphere
+        https//server0.gym.lan:8443/PlantsByWebSphere
 
     The application “**Home” page** is displayed.
  
@@ -631,25 +641,7 @@ However, without session persistence configured, any session data is lost, such 
  
     The application high availability test is completed.
 
-
-
-### **Clear Firefox Browsing Data**
-
-1.  Clear the browsing data that is cached in Firefox before continuing to Test Case 2
-    
-    a. From Firefox, click on the “**Clear Browsing Data**” icon
-        located in the upper right-corner of the browser window.
-
-    ![](./images/media/image45.png)
-
-    b. Select “**All Data Types**” from the menu
-
-    ![](./images/media/image46.png)
-
-    c. **Close** the “Clear Browsing Data” message box
-
-    ![](./images/media/image47.png)
-
+    <br/>
 
 ### **Test Case 2:**
 
@@ -660,7 +652,7 @@ application does not use http sessions, and therefore the web server plugin can 
 
 2.  Open a new browser window and enter the **WhereAmI** application URL as:
 
-        http://server0.gym.lan:8080/WhereAmI
+        https://server0.gym.lan:8443/WhereAmI
 
     The output shows that currently the application is running from **appServer1** server.
  
@@ -674,7 +666,8 @@ application does not use http sessions, and therefore the web server plugin can 
 
 4.  Refresh the browser again a few more times and see that the requests get routed to **appServer1** and **appServer2** accordingly.
 
-    The round robin load balancing test is completed.
+    
+**The round robin load balancing test is completed.**
 
 
 
