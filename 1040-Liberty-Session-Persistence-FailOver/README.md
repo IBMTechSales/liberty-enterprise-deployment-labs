@@ -363,30 +363,13 @@ application server and you can still access the application. However,
 the shopping cart data is lost because it was stored in the local
 session object in the Liberty server.
 
-### **Clear Firefox Browsing Data**
-
-1.  Clear the browsing data that is cached in Firefox before continuing
-    to Test Case
-    
-    a. From Firefox, click on the “**Clear Browsing Data**” icon
-        located in the upper right-corner of the browser window.
-
-    ![](./images/media/image25.png)
-
-    b. Select “**Cache**” from the menu
-
-    ![](./images/media/image26.png)
-
-    c.  **Close** the “Clear Browsing Data” message box
-
-    ![](./images/media/image27.png)
 
 
-### **Test the application without session persistence**
+### **2.1 Test the application without session persistence**
 
 1.  To access the **PlantsByWebSphere** application through IHS server  and plugin, open a new browser window and enter the application URL as:
 
-        http://server0.gym.lan:8080/PlantsByWebSphere
+        https://server0.gym.lan:8443/PlantsByWebSphere
 
     The application **Home** page is displayed.
  
@@ -434,22 +417,12 @@ session object in the Liberty server.
  
     ![Graphical user interface, application Description automatically  generated](./images/media/image36.png)
 
-7.  From the **PlantsByWebSphere** application page, click any link on the page to navigate away from current page, you will see an error message like this one:
+7.  From the PlantsByWebSphere application page, click the **HOME** link on the page
 
-    ![](./images/media/image37.png)
- 
-    This is an expected error, because the **PlantsByWebSphere**
- application is using session data and currently the Liberty server is not configured to support the session persistence yet.
-
-8.  Click the back icon on the web page to return to the previous page, then click the **HOME** link on the page.
-
-    ![](./images/media/image38.png)
- 
     ![](./images/media/image39.png)
  
-    Now you can access all pages of the application.
-
-9.  Click the **SHOPPING CART** link to go to application **Shopping Cart** page, you can see the shopping cart list is empty indicating that the shopping cart data is lost in the server down incident.
+   
+8.  Click the **SHOPPING CART** link to go to application **Shopping Cart** page, you can see the shopping cart list is empty indicating that the shopping cart data is lost in the server down incident.
 
     ![](./images/media/image40.png)
 
@@ -566,7 +539,7 @@ With session persistence enabled, you can repeat the same testing steps used in 
 
 3.  From the browser, return to the PlantsByWebSphere application
 
-        http://server0.gym.lan:8080/PlantsByWebSphere
+        https://server0.gym.lan:8443/PlantsByWebSphere
 
 4.  In the **PlantsByWebShere** window, click **HOME** link.
 
