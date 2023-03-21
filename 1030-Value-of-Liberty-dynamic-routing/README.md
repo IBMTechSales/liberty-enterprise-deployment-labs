@@ -633,7 +633,7 @@ However, without session persistence configured, any session data is lost, such 
  
     This demonstrates that the Liberty dynamic routing detects the application server is down and directs the traffic to another application server automatically.
  
-    The application high availability test is completed.
+    **The application high availability test is completed.**
 
     <br/>
 
@@ -649,12 +649,14 @@ application does not use http sessions, and therefore the web server plugin can 
         https://server0.gym.lan:8443/WhereAmI
 
     The output shows that currently the application is running from **appServer1** server.
+
+    In your test, you may see **appSever2** handing the initial request. 
  
     ![Graphical user interface, text, application, email Description  automatically generated](./images/media/image48.png)
 
 3.  Refresh the application page by clicking the **refresh icon** on the browser.
 
-    You can see the output showing that Liberty dynamic routing feature directs the request traffic to **appServer2** server.
+    You can see the output showing that Liberty dynamic routing feature directs the request traffic to other application server in a round-robin fashion.
  
     ![](./images/media/image49.png)
 
@@ -721,7 +723,11 @@ In the example, requests that match **“/WhereAmI%”** will be routed to the L
     </tbody>
     </table>
 
-4.  See the new routing rule illustrated below. The new routing rule  states:
+4.  Refresh the browser window for **WhereAmI** again and now you see that the requests are only routed to **appServer1**.
+
+    ![Graphical user interface, text, application, email Description  automatically generated](./images/media/image48.png)
+  
+5.  See the new routing rule illustrated below. The new routing rule  states:
     
     - The rules apply to the “webserver1” HTTP server
     
@@ -733,9 +739,8 @@ In the example, requests that match **“/WhereAmI%”** will be routed to the L
 
     ![](./images/media/image53.png)
 
-5.  Refresh the browser window for **WhereAmI** again and now you see that the requests are only routed to **appServer1**.
 
-6.  Run the following script again to change the destination to ONLY **appServer2**
+9.  Run the following script again to change the destination to ONLY **appServer2**
 
 
         ~/liberty_admin_pot/lab-scripts/applyRoutingRules.sh -s appServer2
