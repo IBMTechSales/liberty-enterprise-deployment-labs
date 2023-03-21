@@ -426,7 +426,7 @@ Use the automation script to deploy the Liberty server from the server package y
     > ![](./images/media/image23.png)
 
 
-### **5.2 Add a collective member to the remote host VM, server1.gym.lan**
+### **5.2 Deploy a collective member to the remote host VM, server1.gym.lan**
  
 
 Now, run the script again, using slightly different parameters, to
@@ -562,7 +562,7 @@ packages for flexible deployments.
 The final activity in this lab is to demonstrate the applications
 continue to run as-is after the upgrade.
 
-## **Part 4: Test the applications after the Liberty upgrade**
+## **Part 6: Test the applications after the Liberty upgrade**
 
 You have successfully ripple started the new 22.0.0.12 servers in the
 collective.
@@ -571,12 +571,12 @@ In this section, you will test the PlantsByWebSphere and WhereAmI
 applications and ensure the applications run properly after the upgrade to Liberty 22.0.0.12.
 
 
-### **Test the applications used in the labs in this workshop series**
+### **Part 6: Test the applications used in the labs in this workshop series**
 
 In this section, you will test the two applications that are deployed in
 the collective.
 
-### **4. 1 Test the PlantsByWebSphere application:** 
+### **6. 1 Test the PlantsByWebSphere application:** 
 
 1.  To access the **PlantsByWebSphere** application on appServer1
     
@@ -610,7 +610,7 @@ the collective.
     ![](./images/media/image39.png)
 
 
-### **4.2. Test the WhereAmI application:** 
+### **6.2. Test the WhereAmI application:** 
 
 1.  To access the **WhereAmI** application on appServer1
     
@@ -630,12 +630,12 @@ the collective.
     ![](./images/media/image41.png)
 
 
-### **4.3 Test Dynamic Routing after the Liberty upgrade**
+### **6.3 Test Dynamic Routing after the Liberty upgrade**
 
 <table>
 <tbody>
 <tr class="odd">
-<td><img src="./images/media/image21.png" style="width:0.9875in;height:0.6875in" alt="sign-info" /></td>
+<td><img src="./images/media/image21.png" style="width:1.9875in;height:0.6875in" alt="sign-info" /></td>
 <td><p><strong>IMPORTANT!</strong></p>
 <p>This section is optional and can only be performed if you have completed Lab “<strong>1030 -Dynamic Routing</strong>” in this PoT series, or if you ran the <strong>deployCollective.sh</strong> script in "Part 2" of this lab, Lab 1050.</p></td>
 </tr>
