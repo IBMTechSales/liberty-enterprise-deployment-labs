@@ -210,7 +210,7 @@ In this section you will ensure that a Liberty administrative collective is avai
 <tr class="odd">
 <td><img src="./images/media/image2.png" style="width:2.170833in;height:0.73125in" alt="sign-caution" /></td>
 <td><p><strong>IMPORTANT: Please read!</strong></p>
-<p>If you have completed the <strong>Lab 1020</strong> or <strong>Lab 1030</strong>of this series, you have already created the Liberty collective controller.</p>
+<p>If you have completed the <strong>Lab 1020</strong> or <strong>Lab 1030</strong> of this series, you have already created the Liberty collective controller.</p>
 <p>In other words, you can skip <strong>Part 2</strong> of the lab and continue with <strong>Part 3</strong> if you have already completed Lab 1020 or Lab 1030 in this series.</p>
 <p>The Admin Center ULR is: <a href="https://server0.gym.lan:9491/adminCenter">https://server0.gym.lan:9491/adminCenter</a></p>
 <p>The Admin Center credentials are: <strong>admin</strong> / <strong>admin</strong></p></td>
@@ -309,7 +309,7 @@ Producing the build output in the form of a Liberty server package zip file prov
 
 In this section of the lab, you will use the provided shell script that automates the tasks for producing a server package for deployment to the collective.
 
-## **Use the Maven Build script to produce a Server package with Liberty 22.0.0.12**
+### **Use the Maven Build script to produce a Server package with Liberty 22.0.0.12**
 
 1.  Run the following command to build the applications and produce a
     server package, which will use WebSphere Liberty kernel, version
