@@ -8,7 +8,7 @@
 
 Need support? Contact **Kevin Postreich, Yi Tang**
 
-## 
+
 
 ## **Introduction**
 
@@ -477,19 +477,6 @@ At this point, you should have two Liberty collective members should now be crea
 
     In this section, you will **start** these two servers from the Liberty Admin Center if they are not already started. 
 
-    ![](./images/media/image28.png)
-
-<table>
-<tbody>
-<tr class="odd">
-<td><img src="./images/media/image17.png" style="width:1.40833in;height:0.73125in" alt="sign-caution" /></td>
-<td><p><strong>IMPORTANT: Please read!</strong></p>
-<p>If the two servers illustrated above are NOT in your collective, then you cannot continue with the lab.</p>
-<p>Ensure that you completed <strong>Lab 1020</strong> of this series, or you have completed the <strong>Part 2</strong> of this lab.</p>
-<p>If you already completed Lab 1020, then you don’t need to perform Part 4, if the two Liberty servers are in the “<strong>running</strong>” state.</p></td>
-</tr>
-</tbody>
-</table>
 
 The PlantsByWebSphere application requires an application database,
 which you need to ensure is up and running.
@@ -524,6 +511,21 @@ which you need to ensure is up and running.
     a.	From the Admin Center, go to the  **Explorer** page, click the **SERVERS** icon to go to its details page.
 
     ![](./images/media/image30.png)
+
+    ![](./images/media/image28.png)
+
+    
+    <table>
+    <tbody>
+    <tr class="odd">
+    <td><img src="./images/media/image17.png" style="width:1.40833in;height:0.73125in" alt="sign-caution" /></td>
+    <td><p><strong>IMPORTANT: Please read!</strong></p>
+    <p>If the two servers illustrated above are NOT in your collective, then you cannot continue with the lab.</p>
+    <p>Ensure that you completed <strong>Lab 1020</strong> of this series, or you have completed the <strong>Part 2</strong> of this lab.</p>
+    <p>If you already completed Lab 1020, then you don’t need to perform Part 4, if the two Liberty servers are in the “<strong>running</strong>” state.</p></td>
+    </tr>
+    </tbody>
+    </table>
 
 4.	Start appServer1
 
