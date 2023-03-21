@@ -10,17 +10,6 @@ Need support? Contact **Kevin Postreich, Yi Tang**
 
 
 
-<table>
-<tbody>
-<tr class="odd">
-<td><img src="./images/media/image2.png" style="width:0.70833in;height:0.73125in" alt="sign-caution" /></td>
-<td><p><strong>IMPORTANT: Please read!</strong></p>
-<p>This lab requires the completion of <strong>Lab 1020 or Lab 1030</strong> of this series.</p>
-<p>In other words, you cannot perform this lab until you have completed <strong>Lab 1020 or Lab 1030.</strong></p></td>
-</tr>
-</tbody>
-</table>
-
 ## Introduction to the Lab
 
 The goal of this lab is to provide practical guidance and hands-on
@@ -207,18 +196,110 @@ This lab requires artifacts that are stored in a GitHub repository. Run the comm
 
         chmod -R 755 ./
 
+
+
+## **Part 2: Ensure the Liberty Collective is deployed**
+
+Liberty dynamic routing requires a Liberty Collective, and the application servers which host the applications used in the labs to be members of the Liberty collective. The learning module for creating the Liberty collective is “Lab_1020”. 
+
+In this section you will ensure that a Liberty administrative collective is available, and the application servers are deployed to the collective.  
+
+
 <table>
 <tbody>
 <tr class="odd">
-<td><img src="./images/media/image2.png" style="width:0.70833in;height:0.73125in" alt="sign-caution" /></td>
+<td><img src="./images/media/image2.png" style="width:2.170833in;height:0.73125in" alt="sign-caution" /></td>
 <td><p><strong>IMPORTANT: Please read!</strong></p>
-<p>This lab requires the completion of <strong>Lab 1020 or Lab 1030</strong> of this series.</p>
-<p>In other words, you cannot perform this lab until you have completed <strong>Lab 1020 or Lab 1030.</strong></p></td>
+<p>If you have completed the <strong>Lab 1020</strong> or <strong>Lab 1030</strong>of this series, you have already created the Liberty collective controller.</p>
+<p>In other words, you can skip <strong>Part 2</strong> of the lab and continue with <strong>Part 3</strong> if you have already completed Lab 1020 or Lab 1030 in this series.</p>
+<p>The Admin Center ULR is: <a href="https://server0.gym.lan:9491/adminCenter">https://server0.gym.lan:9491/adminCenter</a></p>
+<p>The Admin Center credentials are: <strong>admin</strong> / <strong>admin</strong></p></td>
 </tr>
 </tbody>
 </table>
 
-## **Part 2: Produce a new “server package” using Liberty 22.0.0.12**
+
+### 2.1: If you have not completed lab 1020 or lab 1030, the following steps provide a “Fast path” to creating the Liberty collective required for this lab, "Lab 1050". 
+
+1.	Run the command below to ensure a Liberty collective is created:
+
+        /home/techzone/liberty_admin_pot/lab-scripts/deployCollective.sh
+
+    The deployCollectve.sh script will do the following: 
+
+    - If the Controller already exists, the script will ABORT, as a collective already exists
+    - If the Controller does NOT exist, it will be created 
+    - Build and produce a Liberty Server package to deploy to Liberty application servers
+    - Create two Liberty Servers, “appServer1” and “appServer2”, deploy the server package, and join the servers to the Liberty Collective
+    - Configure Dynamic Routing in the Collective Controller
+
+2.	Once the script completes, access the **Admin Center**. Enter the login credentials as: **admin** / **admin**
+
+        https://server0.gym.lan:9491/adminCenter
+
+    **Note:** If you see the “Warning: Potential Security Risk Ahead”,  click **Advanced..-\>Accept Risk and Continue** to continue.
+ 
+    The Liberty collective Admin Center page is displayed.
+ 
+    ![Graphical user interface, application Description automatically  generated](./images/media/image18.png)
+
+3.  Click the **Explore** icon
+
+    ![Icon Description automatically  generated](./images/media/image19.png)
+ 
+    The collective resource list is displayed, and you can see that you have three servers.
+ 
+    ![](./images/media/new-image001.png)
+
+4.	Click the Servers list to see the three servers, appServer1, appServer2, and CollectiveController    
+ 
+    ![](./images/media/new-image002.png)
+
+
+    **AVOID TROUBLE!** 
+
+    If you ran the “**deployCollectve.sh**” command, and it ended with the following information, as illustrated in the screen shot below, it means that the script detected the Collective Controller has already been created. 
+
+    Therefore, the scripts existed and displayed the URL to the Admin Center. 
+
+    Go to the Admin Center URL and verify that the collective contains the two collective members, “appServer1” and “appServer2” as illustrated above. 
+
+    **Troubleshooting!**
+
+    Admin Center app cannot run, or the two application servers are not part of the collective, then manual cleanup of the collective is required, and you should contact the lab instructor. 
+
+    ![](./images/media/new-image003.png)
+
+
+## **Part 3: Ensure the Liberty collective member servers are deployed** 
+
+At this point, you should have two Liberty collective members should now be created in the collective, and named as follows:
+
+  - appServer1
+  - appServer2
+
+1.	Access the Liberty Admin Center from the browser
+
+    a.	Enter the login credentials as: admin / admin
+
+        https://server0.gym.lan:9491/adminCenter
+
+2.	Go to the Servers view in the Admin Center
+
+    a.	From the Admin Center, go to the  **Explorer** page, click the **SERVERS** icon to go to its details page.
+
+    ![](./images/media/new-image005.png)
+
+    ![](./images/media/new-image006.png)
+
+
+	
+At this point, **appServer1** and **appServer2** should be shown in the collective. 
+
+It is OK if they are not currently in the “Running” state. You will start them later in the labs.
+
+
+## **Part 4: Produce a new “server package” using Liberty 22.0.0.12**
 
 In this section of the lab, you will use the same automated
 “**mavenBuild**” script that was used in previous labs to produce a
@@ -265,7 +346,7 @@ In the next sections of the lab, you will continue the best practice
  of using automation to deploy the server package to two hosts (VMs)
  and join the deployed servers to the Liberty Collective.
 
-## **Part 3: Deploy the new server package to the Collective**
+## **Part 5: Deploy the new server package to the Collective**
 
 In this section of the lab, you deploy new Liberty servers as collective members to the collective, using the server package that you produced in the previous section of the lab.
 
@@ -308,7 +389,7 @@ In this lab, you use the same “**addMember.sh**” script used in previous lab
     ![](./images/media/image20.png)
 
 
-### **Add a collective member to the local host VM, server0.gym.lan**
+### **5.1 Deploy collective member to the local host VM, server0.gym.lan**
 
 Use the automation script to deploy the Liberty server from the server package you created earlier and join the member to the collective.
 
@@ -323,20 +404,6 @@ Use the automation script to deploy the Liberty server from the server package y
 
 
         ~/liberty_admin_pot/lab-scripts/addMember.sh -n appServer1 -v 22.0.0.12 -p 9081:9441 -h server0.gym.lan
-
-    <table>
-    <tbody>
-    <tr class="odd">
-    <td><img src="./images/media/image21.png" style="width:0.96042in;height:0.76042in" alt="sign-info" /></td>
-    <td><p>When running the script, it requires <strong>user interaction</strong>.</p>
-    <p>You will need to reply to <strong>accept certificate chains</strong> as Liberty commands are run to join the server to the collective.</p></td>
-    </tr>
-    </tbody>
-    </table>
-
-    a.  Enter **"y"** when prompted with question “**Do you wish to continue with the parameters specified? (y/n)?**”.
-
-    b.  Enter **"y"** when prompted with question “**Do you want to accept the above certificate chain? (y/n)**”.
 
     ![](./images/media/image22.png)
  
@@ -359,10 +426,10 @@ Use the automation script to deploy the Liberty server from the server package y
     > ![](./images/media/image23.png)
 
 
-### **Add a collective member to the remote host VM, server1.gym.lan**
+### **5.2 Add a collective member to the remote host VM, server1.gym.lan**
  
 
-Now, run the b script again, using slightly different parameters, to
+Now, run the script again, using slightly different parameters, to
 deploy Liberty to the remote VM, **server1.gym.lan**. And, then join the remote member to the collective.
 
 Joining remote members to a collective requires a couple of additional steps that the script performs for you in the lab environment and are identified below.
@@ -372,25 +439,6 @@ Joining remote members to a collective requires a couple of additional steps tha
     ports.
 
         ~/liberty_admin_pot/lab-scripts/addMember.sh -n appServer2 -v 22.0.0.12 -p 9082:9442 -h server1.gym.lan
-
-    <table>
-    <tbody>
-    <tr class="odd">
-    <td><img src="./images/media/image21.png" style="width:1.4875in;height:0.6875in" alt="sign-info" /></td>
-    <td><p>When running the script, it requires <strong>user interaction</strong>.</p>
-    <ul>
-    <li><p>You will need to reply to <strong>accept certificate chains (Multiple times)</strong> as Liberty commands are run to join the server to the collective.</p></li>
-    </ul></td>
-    </tr>
-    </tbody>
-    </table>
-
-    a.  Enter **"y"** when prompted with question “**Do you wish to continue with the parameters specified? (y/n)?**”.
-
-    b.  Enter **"y"** when prompted with question “**Do you want to accept the above certificate chain? (y/n)**”.
-
-    > **NOTE:** You will get prompted multiple time to accept the
- certificate chain as the script execute various commands.
 
     ![](./images/media/image24.png)
 
@@ -412,7 +460,7 @@ Joining remote members to a collective requires a couple of additional steps tha
 
 
 
-### **Ripple Start the new 22.0.0.12 servers**
+### **5.3 Ripple Start the new 22.0.0.12 servers**
 
 Now that the new Liberty servers with Liberty version 22.0.0.12 have
 been deployed to the collective, all you need to do now is ripple start the servers.
@@ -528,13 +576,15 @@ applications and ensure the applications run properly after the upgrade to Liber
 In this section, you will test the two applications that are deployed in
 the collective.
 
-### **Test the PlantsByWebSphere application:** 
+### **4. 1 Test the PlantsByWebSphere application:** 
 
 1.  To access the **PlantsByWebSphere** application on appServer1
     
     a.  Open a new tab on the Firefox browser and test PlantsByWebSphere on **appServer1**, which is on **server0.gym.lan**
 
-        http://server0.gym.lan:9081/PlantsByWebSphere
+        https://server0.gym.lan:9441/PlantsByWebSphere
+
+    **Note:** If you see the “Warning: Potential Security Risk Ahead”, click Advanced..->Accept Risk and Continue to continue.
 
     ![](./images/media/image35.png)
 
@@ -553,19 +603,21 @@ the collective.
 2.  OPTIONAL: Repeat the steps to access the **PlantsByWebSphere**
     application on appServer2 on host server1.gym.lan
 
-        http://server1.gym.lan:9082/PlantsByWebSphere
+        https://server1.gym.lan:9442/PlantsByWebSphere
+
+    **Note:** If you see the “Warning: Potential Security Risk Ahead”, click Advanced..->Accept Risk and Continue to continue.
 
     ![](./images/media/image39.png)
 
 
-### **Test the WhereAmI application:** 
+### **4.2. Test the WhereAmI application:** 
 
 1.  To access the **WhereAmI** application on appServer1
     
     a.  Open a new tab on the Firefox browser and test WhereAmI on
         **appServer1**, which is on **server0.gym.lan**
 
-        http://server0.gym.lan:9081/WhereAmI
+        https://server0.gym.lan:9441/WhereAmI
 
     b.  Note that the application is running on Liberty version 22.0.0.12
 
@@ -573,48 +625,34 @@ the collective.
 
 2.  OPTIONAL: Repeat the steps to access the **WhereAmI** application on appServer2 on host server1.gym.lan
 
+        https://server1.gym.lan:9442/WhereAmI
+
     ![](./images/media/image41.png)
 
 
-### **Test Dynamic Routing after the Liberty upgrade**
+### **4.3 Test Dynamic Routing after the Liberty upgrade**
 
 <table>
 <tbody>
 <tr class="odd">
 <td><img src="./images/media/image21.png" style="width:0.9875in;height:0.6875in" alt="sign-info" /></td>
 <td><p><strong>IMPORTANT!</strong></p>
-<p>This section is optional and can only be performed if you have completed Lab “<strong>1030 -Dynamic Routing</strong>” in this PoT series.</p></td>
+<p>This section is optional and can only be performed if you have completed Lab “<strong>1030 -Dynamic Routing</strong>” in this PoT series, or if you ran the <strong>deployCollective.sh</strong> script in "Part 2" of this lab, Lab 1050.</p></td>
 </tr>
 </tbody>
 </table>
 
-If you have completed **Lab 1030-Dynaic Routing**, then you can proceed with this section to demonstrate that Liberty’s Dynamic Routing capabilities is now automatically directing incoming requests from the HTTP server to the new Liberty 22.0.0.12 servers.
+In this part of the lab, you demonstrate that Liberty’s Dynamic Routing capabilities is now automatically directing incoming requests from the HTTP server to the new Liberty 22.0.0.12 servers, after the upgrade. 
 
-### **Clear Firefox Browsing Data**
 
-1.  Clear the browsing data that is cached in Firefox before continuing.
-    
-    a. From Firefox, click on the “**Clear Browsing Data**” icon
-         located in the upper right-corner of the browser window.
-
-    ![](./images/media/image42.png)
-
-    b. Select “**All Data Types**” from the menu
-
-    ![](./images/media/image43.png)
-
-    c.  **Close** the “Clear Browsing Data” message box
-
-    ![](./images/media/image44.png)
 
 ### **Test the dynamic routing after the Liberty upgrade**
 
 1.  To access the **WhereAmI** application through the IBM HTTP Server and plugin, open a new browser window and enter the application URL as:
 
-        http://server0.gym.lan:8080/WhereAmI
+        https://server0.gym.lan:8443/WhereAmI
 
-    The output shows the application running on **appServer1** on the
- initial request.
+    The output shows the application running on **appServer1** on the initial request.
  
     > **Note:** It is possible that the request is routed to **appServer2** instead of appServer1.
  
