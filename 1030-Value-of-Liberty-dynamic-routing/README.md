@@ -195,19 +195,16 @@ dynamic routing behavior.
 
   - Verify the HTTP server
 
-  - Create a Liberty Collective Controller **(If you did not complete
+  - Create a Liberty Collective **(If you did not complete
     Lab\_1020)**
 
   - Configure Dynamic Routing
 
-  - Deploy Liberty as collective Members **(If you did not complete
-    Lab\_1020)**
-
   - Start Liberty Member Servers from Liberty Admin Center
 
-  - Testing the Dynamic Routing Features
+  - Test the Dynamic Routing Features
 
-  - Configure and Testing the Dynamic Routing Rule
+  - Configure and Test Dynamic Routing Rules
 
   - Summary
 
@@ -227,7 +224,7 @@ following directory locations and HTTP port.
   - The installation directory for Plug-in is
     **/opt/IBM/WebSphere/Plugins**.
 
-  - IHS is configured with a listening port of **8080**
+  - IHS is configured to listen on secure port **8443**
 
 In this section, you ensure the IBM HTTP Server starts and runs as
 expected
@@ -263,7 +260,7 @@ expected
 
 ## **Part 2: Ensure the Liberty Collective is deployed**
 
-Liberty dynamic routing requires a Liberty Collective, and the application servers which host the applications used in the labs are members of the Liberty collective. The learning module for creating the Liberty collective is “Lab_1020”. 
+Liberty dynamic routing requires a Liberty Collective, and the application servers which host the applications used in the labs to be members of the Liberty collective. The learning module for creating the Liberty collective is “Lab_1020”. 
 
 In this section you will ensure that a Liberty administrative collective is available, and the application servers are deployed to the collective.  
 
@@ -282,11 +279,11 @@ In this section you will ensure that a Liberty administrative collective is avai
 </table>
 
 
-### 2.1: If you have not completed lab 1020, the following steps provide a “Fast path” to creating the Liberty collective required for this lab. 
+### 2.1: If you have not completed lab 1020, the following steps provide a “Fast path” to creating the Liberty collective required for this lab, "Lab 1030". 
 
 1.	Run the command below to ensure a Liberty collective is created:
 
-        /home/techzone/liberty_admin_pot/lab-scripts/deployCollective.sh --skip1030
+        /home/techzone/liberty_admin_pot/lab-scripts/deployCollective.sh --lab1030
 
     The deployCollectve.sh script will do the following: 
 
