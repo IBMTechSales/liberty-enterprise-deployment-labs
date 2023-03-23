@@ -715,7 +715,7 @@ This lab demonstrates how to gather a `server dump` and review its output.
     thread dump (`javacore\*.txt` file) and a `dump_*` folder with
     additional Liberty introspections.
 
-> ![](./images/media/image46.png)
+    ![](./images/media/image46.png)
 
 6.  You can double click the `javacore*.txt` file to review the thread  stacks (search for `Thread Details` for the start of the stacks), or use a free graphical tool such as the [IBM Thread and Monitor Dump Analyzer](https://www.ibm.com/support/pages/ibm-thread-and-monitor-dump-analyzer-java-tmda) (TMDA).
 
@@ -840,33 +840,32 @@ the ones we’re using:
 
 You will manually add this configuration:
 
-1.  Open `gedit Text Editor` and open the file:
+1.  Open `gedit Text Editor` and open the`memberOverride.xml` file:
 
         gedit /home/techzone/lab-work/liberty-staging/22.0.0.8-appServer1/wlp/usr/servers/appServer1/configDropins/overrides/memberOverride.xml
 
 2.  Replace this element:
 
-```html
- <httpEndpoint id="defaultHttpEndpoint"
+    ```html
+    <httpEndpoint id="defaultHttpEndpoint"
  
- httpPort="9081"
+    httpPort="9081"
  
- httpsPort="9441" host="*" />
- ```
-
- With:
+    httpsPort="9441" host="*" />
+    ```
+     With:
  
- ```html
- <httpEndpoint id="defaultHttpEndpoint"
+    ```html
+    <httpEndpoint id="defaultHttpEndpoint"
  
- httpPort="9081"
+    httpPort="9081"
  
- httpsPort="9441" host="*">
+    httpsPort="9441" host="*">
  
-     <accessLogging filepath="${server.output.dir}/logs/http_access.log" maxFileSize="100" maxFiles="4" logFormat="%h %u %t &quot;%r&quot; %s %b %D %{R}W %{remote}p %p" />
+       <accessLogging filepath="${server.output.dir}/logs/http_access.log" maxFileSize="100" maxFiles="4" logFormat="%h %u %t &quot;%r&quot; %s %b %D %{R}W %{remote}p %p" />
  
- </httpEndpoint>
-```
+    </httpEndpoint>
+    ```
 
 3.  Click `Save`. The configuration will be automatically reloaded.
 
