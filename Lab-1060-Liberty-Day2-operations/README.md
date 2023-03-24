@@ -298,7 +298,7 @@ In this section you will ensure that a Liberty administrative collective is avai
 ## Lab 1: Enable and visualize monitoring data
 
 This lab demonstrates how to enable the
-[`monitor-1.0` feature](https://www.ibm.com/docs/en/was-liberty/nd?topic=environment-monitoring-monitor-10) andvisualize it through the Admin Center. Note that enabling
+[`monitor-1.0` feature](https://www.ibm.com/docs/en/was-liberty/nd?topic=environment-monitoring-monitor-10) and visualize it through the Admin Center. Note that enabling
 monitor-1.0 may have an overhead of up to a few percent although this
 may be minimized by [filtering to specific statistics, if
 needed](https://www.ibm.com/docs/en/was-liberty/nd?topic=10-multiple-components-monitoring).
@@ -398,13 +398,17 @@ The Liberty monitor feature is now configured for `appServer1` and
 
 12. Scroll down to the new statistics boxes and select the data sources to monitor
 
-    a. For the `In Use Connections` and `Average Wait Time (ms)` boxes, use the `Select data sources...` dropdown to select
-    `jdbc/PlantsByWebSphereDataSource`.
+    a. For the `In Use Connections` box, use the `Select data sources...` dropdown to select `jdbc/PlantsByWebSphereDataSource`.
+
+    ![A picture containing graphical user interface Description automatically generated](./images/media/image27.png)
+
+    b. For the `Average Wait Time (ms)` box, use the `Select data sources...` dropdown to select `jdbc/PlantsByWebSphereDataSource`.
+
+
+    ![A picture containing graphical user interface Description automatically generated](./images/media/image27-b.png)
 
     > **Note** that if you want to view multiple data sources, it’s
  generally better to create multiple boxes and choose one data source  per box instead of checking the All box as it’s harder to interpret aggregated statistics.
-
-    ![A picture containing graphical user interface Description automatically generated](./images/media/image27.png)
 
 13. Scroll down to the `Active Sessions` box and use the `Select
     sessions...` dropdown to select `default_host/PlantsByWebSphere`.
@@ -555,11 +559,11 @@ review the diagnostics produced by `requestTiming`.
     2.  The next set of lines are the **stack trace** at the time the
     threshold was exceeded.
 
-    > **Tip:** This is normally what is sent to the development team to find the cause.
+        > **Tip:** This is normally what is sent to the development team to find the cause.
 
-    In the following example, `ShoppingBean.getPriceInfo` causing a `sleep` is the cause of the delay: 
+        In the following example, `ShoppingBean.getPriceInfo` causing a `sleep` is the cause of the delay: 
 
-    ![](./images/media/image39.png)
+        ![](./images/media/image39.png)
 
     3.  After the stack, there is a **table of events of leading up to the slow request** including components such as database queries, how long they took, and the SQL query.
 
@@ -669,8 +673,9 @@ Next, exercise the application to simulate a user error:
   
     Most commonly, this will include warnings and errors from the JVM such as OutOfMemoryErrors. One common thing to do for IBM Java and IBM Semeru Runtimes JVMs is to search for the phrase JVM which are JVM messages and look for message codes ending with `W` or `E`.
 
+3. **Close** the gedit editor
 
-3.  Start the database again for future labs:
+4.  Start the database again for future labs:
 
         docker start db2_demo_data
 
@@ -721,6 +726,8 @@ This lab demonstrates how to gather a `server dump` and review its output.
 
 7.  You would normally send these files to the development team for
     review or open a support case with IBM support.
+
+8. **Close** the `File Explorer` windows    
 
 ### Summary
 
@@ -775,7 +782,7 @@ This lab contains the following activities:
 
 ### Part 1: Configure accessLogging in WebSphere Liberty
 
-Unlike the labs above, accessLogging does not need an additional feature to be enabled; instead, configuration just needs to be added to the httpEndpoint element. Normally, the httpEndpoint element is self-closing with a /\> at the end; for example:
+Unlike the labs above, `accessLogging` does not need an additional feature to be enabled; instead, configuration just needs to be added to the `httpEndpoint` element. Normally, the `httpEndpoint` element is self-closing with a `\>` at the end; for example:
 
 ```html 
 <httpEndpoint id="defaultHttpEndpoint"
@@ -787,7 +794,7 @@ httpsPort="9446"
 host="*" \>
 ```
 
-The `accessLogging` element is a child of `httpEndpoint`, so the element must first be converted from self-closing to non-self-closing by replacing /\> with \> and adding a closing element:
+The `accessLogging` element is a child of `httpEndpoint`, so the element must first be converted from self-closing to non-self-closing by replacing `\>` with `>` and adding a closing element:
 
 ```html
 <httpEndpoint id="defaultHttpEndpoint"
@@ -915,6 +922,9 @@ You will manually add this configuration:
         case, since Liberty flushed part of its response before
         performing more processing (and hitting a 5 second sleep that we  diagnosed in a previous lab), this is a good example where a difference between `%D`and `%{R}W` can still be caused by a problem inside Liberty.
 
+7. **Close** the `gedit` editor
+
+
 ### Summary
 
 In summary, if the overhead of the HTTP Access Log is acceptable, it is usually worth enabling it for diagnostic insights as well as helping understand what users are doing for capacity planning and historical analysis. 
@@ -975,10 +985,12 @@ logging.
 
 5.  Click **`Save`**
 
+6. **Close** the `gedit editor`
+
 
     - What this has configured is that the console.log will now receive  all messages greater or equal to `INFO`, HTTP access log entries (if configured), FFDCs, and audit events. This is in addition to any C/C++ stdout/stderr output such as from the JVM itself.
 
-6.  Te server must be **restarted** to pick up this change
+7.  The server must be **restarted** to pick up this change
     
     a.  Go to the `Admin Center` and in the **`Explore` view**, click the drop  down on `appServer1`, and click `Restart`.
 
@@ -1001,6 +1013,7 @@ logging.
 4.  This format is not designed to be read by humans but instead
     ingested by centralized logging solutions.
 
+5. **Close** the `gedit editor`
 
 ### Summary
 
