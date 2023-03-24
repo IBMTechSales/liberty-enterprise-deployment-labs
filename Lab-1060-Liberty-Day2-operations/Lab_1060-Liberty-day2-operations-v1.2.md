@@ -400,12 +400,15 @@ The Liberty monitor feature is now configured for `appServer1` and
 
     a. For the `In Use Connections` box, use the `Select data sources...` dropdown to select `jdbc/PlantsByWebSphereDataSource`.
 
+    ![A picture containing graphical user interface Description automatically generated](./images/media/image27.png)
+
     b. For the `Average Wait Time (ms)` box, use the `Select data sources...` dropdown to select `jdbc/PlantsByWebSphereDataSource`.
+
+
+    ![A picture containing graphical user interface Description automatically generated](./images/media/image27-b.png)
 
     > **Note** that if you want to view multiple data sources, it’s
  generally better to create multiple boxes and choose one data source  per box instead of checking the All box as it’s harder to interpret aggregated statistics.
-
-    ![A picture containing graphical user interface Description automatically generated](./images/media/image27.png)
 
 13. Scroll down to the `Active Sessions` box and use the `Select
     sessions...` dropdown to select `default_host/PlantsByWebSphere`.
