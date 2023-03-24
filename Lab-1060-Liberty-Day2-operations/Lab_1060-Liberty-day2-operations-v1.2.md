@@ -559,11 +559,11 @@ review the diagnostics produced by `requestTiming`.
     2.  The next set of lines are the **stack trace** at the time the
     threshold was exceeded.
 
-    > **Tip:** This is normally what is sent to the development team to find the cause.
+        > **Tip:** This is normally what is sent to the development team to find the cause.
 
-    In the following example, `ShoppingBean.getPriceInfo` causing a `sleep` is the cause of the delay: 
+        In the following example, `ShoppingBean.getPriceInfo` causing a `sleep` is the cause of the delay: 
 
-    ![](./images/media/image39.png)
+        ![](./images/media/image39.png)
 
     3.  After the stack, there is a **table of events of leading up to the slow request** including components such as database queries, how long they took, and the SQL query.
 
