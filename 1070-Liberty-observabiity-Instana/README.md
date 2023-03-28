@@ -368,7 +368,7 @@ applications, you need to install an Instana agent to your environment.
 Since you are using two VMs, **server0.gym.lan** and
 **server1.gym.lan**, to support Liberty collective in this lab, the Instana agent needs to be installed in these two VMs.
 
-For simplicity, the Instana agent has been installed and configured in the **server1.gym.lan** VM.
+For simplicity, an Instana agent has been installed and configured in the **server1.gym.lan** VM.
 
 In this section, you are going to learn how to install and configure the Instana agent in the **server0.gym.lan** VM.
 
@@ -621,20 +621,18 @@ PlantsByWebSphere application.
 
 8.  Add the next filter as **`Service > Name = server0.gym.lan`**
     
-    a.  Service  Name = server0.gym.lan
-
     ![](./images/media/image61.png)
 
 9.  Add the next filter as **`Service > Name = db2express-c`**
     
-    a. Service > Name = db2express-c
-
     ![](./images/media/image62.png)
 
-10. At this point, the primary filters are in place. Next you need to  insert the appropriate **`Operands`**, and **`parenthesis`** to define  the appropriate filter.
+     At this point, the primary filters are in place as shown below. 
 
     ![](./images/media/image63.png)
  
+    Next you need to  insert the appropriate **`Operands`**, and **`parenthesis`** to define  the appropriate filter.
+
     The **pbw app filer** definition should match when:
 
     - The “zone” is “Liberty VMs”, **AND** any of the following:
@@ -644,17 +642,8 @@ PlantsByWebSphere application.
 
 
 
-11. Change the `AND` / `OR` **Operators, **`CONTAINS` operand**,** and **`(` `)`** parenthesis grouping as follows to compete the
+10. Change the `AND` / `OR` **Operators, **`CONTAINS` operand**,** and **`(` `)`** parenthesis grouping as follows to compete the
     application perspective filters.
-
-    The final pbw app filter should look like the illustration below.
- 
-    The **pbw app filer** definition should match when:
-
-    - Zone **=** Liberty VMs, **AND**
-      - **(** Service name **CONTAINS** appServer **OR**
-      - Service name **=** server0.gym.lan **OR**
-      - Service name **=** db2express-c **)**
 
     **Tip:** To insert the operand and parenthesis, just position the  mouse between the filters, and select the operand or parenthesis to insert or modify them. The final pbw app filter should look like the illustration below.
  
@@ -694,9 +683,9 @@ PlantsByWebSphere application.
 
     <https://www.ibm.com/docs/en/instana-observability/current?topic=applications-application-perspectives#update-an-application-perspective>
  
-    Currently you will not see any data for the **pbw app** Application  Perspective **Summary page** because there is no workload making  request to the pbw app.
+    Currently you will not see any data for the **pbw app** Application  Perspective **Summary page** because there is no workload making requests to the PlantsByWebSphere application.
  
-    In the next section of the lab, you will exercise the pbw app.
+    In the next section of the lab, you will exercise the PlantsByWebSphere application.
 
 
 
@@ -738,7 +727,7 @@ In this section, you are going to add some workload to the
 ### 5.1 Run a load test to see Liberty observability with Instana
 
  In the last section, you ran a few requests for PlantsByWebSphere
- application to verify that Instana’s Application Perspective for the  “`pbw app`” is configured to observe the following services for PlantsByWebSphere application.
+ application to verify that the `pbw app` in Instana’s Application Perspective is configured to observe the following services for PlantsByWebSphere application.
 
   - `Http server` on server0.gym.lan
   - `Liberty application servers` appServer1 and appServer2
@@ -760,7 +749,7 @@ In this section, you are going to add some workload to the
 2.  In Instana, view the details for the **pbw** app in the
     **application perspective “Summary”** page
     
-    a.  Once the workload script is running, go back to Instana **pbw app** application perspective **summary page** to see the
+    a.  Once the workload script is running, go back to Instana **pbw app** application perspective **Summary page** to see the
         details
     
     b.  Ensure the **`pbw app`** perspective is set to show `last 5 minutes` of `Live` data
@@ -776,7 +765,7 @@ In this section, you are going to add some workload to the
  
     ![](./images/media/image76.png)
 
-3.  go to the **`Dependencies`** tab on the **`pbw`** **application
+3.  Go to the **`Dependencies`** tab on the **`pbw`** **application
     perspective**
 
     You will observe the service dependencies that were discovered based on the application perspective configuration you provide in the previous section.
@@ -795,7 +784,7 @@ In this section, you are going to add some workload to the
 
     ![](./images/media/image78.png)
 
-6.  In Instana, within a few minutes, you will see that workflow diagram in the Instana **`dependencies`** view update as illustrated below.
+6.  In Instana, within a few minutes, you will see that workflow diagram in the Instana **`Dependencies`** view update as illustrated below.
 
     This is because during this time, Instana is trying to observe the database using the **`jdbc`** service.
 
@@ -817,11 +806,11 @@ In this section, you are going to add some workload to the
     ![](./images/media/image82.png)
 
 8.  Go back to **`Dependencies`** tab, click the **`db2express-c`**
-    component, and click **`Go to Dashbaord`**.
+    component, and click **`Go to Dashboard`**.
 
     ![](./images/media/image83.png)
 
-9.  In the **`pbw`** Dashboard, click **`Calls`** diagram and select **`View in Analyze`**.
+9.  In the **`db2express-c`** Dashboard, click **`Calls`** diagram and select **`View in Analyze`**.
 
     ![](./images/media/image84.png)
 
