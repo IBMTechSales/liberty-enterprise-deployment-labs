@@ -188,7 +188,23 @@ VM through the noVNC interface for the lab environment.
     Using this method, you can easily copy / paste text from the lab
     guide without having to use the noVNC clipboard.
 
-## Clone the GitHub repo for this workshop
+
+## Setup the lab environment
+
+This Lab requires a Liberty Collective with a Collective Controller and its members. It also required the PlantsByWebSpere application to be deployed to the collective members and Liberty Dynamic Routing to be enabled. 
+
+
+<table>
+<tbody>
+<tr class="odd">
+<td><img src="./images/media/image11.png" style="width:1.20833in;height:0.73125in" alt="sign-caution" /></td>
+<td><p><strong>IMPORTANT: Please read!</strong></p>
+<p>In this section, you will run a script, which is provided, to configure the lab environment to start this lab, 1060</p></td>
+</tr>
+</tbody>
+</table>
+
+### Clone the GitHub repo for this workshop
 
 This lab requires artifacts that are stored in a GitHub repository. Run the command below to clone the repository to the local VM used for the lab.
 
@@ -209,50 +225,42 @@ This lab requires artifacts that are stored in a GitHub repository. Run the comm
     d.  Add the “execute” permissions to the lab-scripts directories and
     shell scripts
 
-        chmod -R 755 ./ |
+        chmod -R 755 ./ 
 
-## Ensure the Liberty Collective is deployed
+### Setup the lab environment to start lab 1060
 
-This lab requires a Liberty Collective, and the application servers
-which host the applications used in the lab to be members of the Liberty collective. **The learning module for creating the Liberty collective is “Lab\_1020”**.
+1.	Run the command below to ensure a Liberty collective is created:
 
-In this section you will ensure that a Liberty administrative collective is available, and the application servers are deployed to the collective.
+        /home/techzone/liberty_admin_pot/lab-scripts/resetEnvironment.sh
 
-<table>
-<tbody>
-<tr class="odd">
-<td><img src="./images/media/image11.png" style="width:2.40833in;height:0.73125in" alt="sign-caution" /></td>
-<td><p><strong>IMPORTANT: Please read!</strong></p>
-<p>If you have completed the <strong>Lab 1020</strong> or <strong>Lab 1030</strong> of this series, you have already created the Liberty collective and deployed the application servers to the collective.</p>
-<p>In other words, you can skip <strong>this section</strong> of the lab and continue with <strong>Lab 1</strong> below if you have already completed Lab 1020 or Lab 1030 in this series.</p>
-<p>The Admin Center ULR is: <a href="https://server0.gym.lan:9491/adminCenter">https://server0.gym.lan:9491/adminCenter</a></p>
-<p>The Admin Center credentials are: <strong>admin</strong> / <strong>admin</strong></p></td>
-</tr>
-</tbody>
-</table>
+    a.	Type “`6`” to reset the environment to start lab 1060
 
-### If you have not completed lab 1020 or lab 1030, the following steps provide a “Fast path” to creating the Liberty collective required for this lab, “lab 1060”. 
+    b.	Type “`y`” when prompted to continue 
 
-1.  Run the command below to ensure a Liberty collective is created:
+    **Note:** The script will take about `5 – 7 minutes` to complete. 
 
-        /home/techzone/liberty_admin_pot/lab-scripts/deployCollective.sh
+    ![](./images/media/resetEnv.png)
 
-    The **deployCollectve.sh** script will do the following:
+    Note: The script will take about `5 – 7 minutes` to complete. 
 
-    - If the Controller already exists, the script will ABORT, as a
-    collective already exists
+    c.	When the script completes, and you see the message “`Ready to start lab 1060`”, you can continue with the next section of the lab 
 
-    - If the Controller does NOT exist, it will be created
-
-    - Build and produce a Liberty Server package to deploy to Liberty application servers
-
-    - Create two Liberty Servers, “appServer1” and “appServer2”, deploy  the server package, and join the servers to the Liberty Collective
-
-    - Configure Dynamic Routing in the Collective Controller
+    ![](./images/media/resetEnv-complete-1060.png)
 
 
+    The **resetEnvironment.sh** script performed the following tasks:  
 
-2.  Once the script completes, access the Admin Center. Enter the login  credentials as: **admin** / **admin**
+    - Remove and cleanup any previously deployed Liberty Collective, Liberty servers and processes. 
+    - Create a fresh Liberty Collective.
+    - Build and produce a Liberty Server package to deploy to Liberty application servers.
+    - Create two Liberty servers, “appServer1” and “appServer2”, deploy the server package, and join the servers to the Liberty Collective.
+    - Deploy the PlantsByWebSphere and WhereAmI applications to these two Liberty servers.
+    - Enable Liberty Dynamic Routing
+
+
+### Start the Liberty servers from the Liberty Admin Center
+
+1. Once the script completes, access the Admin Center. Enter the login  credentials as: **admin** / **admin**
 
         https://server0.gym.lan:9491/adminCenter
 
@@ -262,7 +270,7 @@ In this section you will ensure that a Liberty administrative collective is avai
  
     ![](./images/media/image12.png)
 
-3.  Click the **Explore** icon
+2.  Click the **Explore** icon
 
     ![Icon Description automatically  generated](./images/media/image13.png)
  
@@ -270,30 +278,20 @@ In this section you will ensure that a Liberty administrative collective is avai
  
     ![](./images/media/image14.png)
 
-4.  Click the **Servers** list to see the three servers, appServer1,
+3.  Click the **Servers** list to see the three servers, appServer1,
     appServer2, and CollectiveController
 
     ![](./images/media/image15.png)
 
-    **AVOID TROUBLE\!**
-
-    If you ran the “**deployCollectve.sh**” command, and it ended with the following information, as illustrated in the screen shot below, it means that the script detected the Collective Controller has already been created. Therefore, the scripts existed and displayed the URL to the Admin Center.
-
-    Go to the **Admin Center URL** and verify that the collective contains the two collective members, “appServer1” and “appServer2” as illustrated above.
-
-    **Troubleshooting\!**
-
-    If the Admin Center app cannot run, or the two application servers are not part of the collective, then manual cleanup of the collective is required, and you should contact the lab instructor.
-
-    ![](./images/media/image16.png)
-
-5.	Ensure the application database is started
+4.	Ensure the application database is started
 
         docker start db2_demo_data
 
-6.  **Start** the Liberty servers “**appServer1**” and a**ppServer2**” if they are not already running
+5.  **Start** the Liberty servers “**appServer1**” and a**ppServer2**” if they are not already running
 
     ![](./images/media/image17.png)
+
+
 
 ## Lab 1: Enable and visualize monitoring data
 
