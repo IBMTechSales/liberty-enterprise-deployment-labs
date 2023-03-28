@@ -629,7 +629,7 @@ PlantsByWebSphere application.
     
     a. Service > Name = db2express-c
 
-> ![](./images/media/image62.png)
+    ![](./images/media/image62.png)
 
 10. At this point, the primary filters are in place. Next you need to  insert the appropriate **`Operands`**, and **`parenthesis`** to define  the appropriate filter.
 
