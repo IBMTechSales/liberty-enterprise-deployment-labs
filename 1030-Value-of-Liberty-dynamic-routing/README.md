@@ -549,7 +549,7 @@ which you need to ensure is up and running.
 
     ![Graphical user interface, application Description automatically  generated](./images/media/image35.png)
  
-    You will see all the two applications on both member servers are up nd running.
+    You will see all the two applications on both member servers are up and running.
  
     ![](./images/media/image36.png)
 
