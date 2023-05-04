@@ -782,7 +782,7 @@ Joining remote members to a collective requires a couple of additional steps tha
 
     ![](./images/media/image46.png)
  
-    Showing all servers shows the new “**appSerer2**” server in the
+    Showing all servers shows the new “**appServer2**” server in the
  collective
  
     ![](./images/media/image47.png)
