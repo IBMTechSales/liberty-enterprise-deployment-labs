@@ -227,7 +227,7 @@ the VM.
     From the terminal window, issue the command below to start the WAS
  server.
 
-        /opt/IBM/WebSphere/AppServer85515/bin/startServer.sh tWAS\_85515\_server
+        /opt/IBM/WebSphere/AppServer85515/bin/startServer.sh tWAS_85515_server
 
     The WebSphere Application Server is ready when you see the message
  stating the server is “**open for e-business”**, as illustrated below:
