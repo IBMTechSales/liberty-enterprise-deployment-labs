@@ -181,44 +181,37 @@ VM through the noVNC interface for the lab environment.
 
 ## Tips for working in the lab environment
 
-1.  You can use your Browsers **zoom in** and **zoom out** options to
-    resize the virtual desktop to fit your screen.
+1.  You can resize the viewable area using the **noVNC Settings** options to resize the virtual desktop to fit your screen.
 
-    The examples below are using Firefox and Chrome browsers.
+    a. From the environemnt VM, click on the **twisty** on the noNC control pane to open the menu.  
 
-    - Firefox example:
+    ![fit to window](./images/media/z-twisty.png)
 
-     ![fit to window](./images/media/image13.png)
+    b. To increase the visible area, click on `Settings > Scaling Mode` and set the value to `Remote Resizing`
+      
+     ![fit to window](./images/media/z-remote-resize.png)
 
-    - Chrome example:
 
-     ![fit to window](./images/media/image14.png)
+2.  You can copy / paste text from the lab guide into the lab environment using the clipboard in the noVNC viewer. 
+   
+    a. Copy the text from the lab guide that you want to paste into the lab environment
+    
+    b. Click the **Clipboard** icon and **paste** the text into the noVNC clipboard
 
-2.  You can copy / paste text from the lab guide into the lab
-    environment using the clipboard in the noVNC viewer.
+    ![fit to window](./images/media/paste.png)
+    
+    c. Paste the text into the VM, such as to a terminal window, browser window, etc. 
 
-    a. Copy the text from the lab guide that you want to paste into the
- lab environment
- 
-    b. Click the **Clipboard** icon and **paste** the text into the noVNC
- clipboard
- 
-    ![fit to window](./images/media/image15.png)
- 
-    c. Paste the text into the VM, such as to a terminal window, browser
- window, etc.
- 
     d. Click on the **clipboard** icon again to close the clipboard
- 
-    **NOTE:** Sometimes pasting into a Terminal window in the VM does not
- work consistently. In this case you might try again or paste the text
- into a **Text Editor** in the VM, and then paste it into the Terminal
- window in the VM.
 
-3.  An alternative to using the noVNC Copy / Paste option, you may
-    consider opening the lab guide in a web browser inside of the VM.
-    Using this method, you can easily copy / paste text from the lab
-    guide without having to use the noVNC clipboard.
+    > **NOTE:** Sometimes pasting into a Terminal window in the VM does not work consistently. 
+    
+    > In this case you might try again, or open another Terminal Window and try again, or  paste the text into a **Text Editor** in the VM, and then paste it into the Terminal window in the VM. 
+
+
+3. An alternative to using the noVNC Copy / Paste option, you may consider opening the lab guide in a web browser inside of the VM. Using this method, you can easily copy / paste text from the lab guide without having to use the noVNC clipboard. 
+
+<br/>
 
 ## Lab: Modernize your Runtime to WebSphere Liberty
 
