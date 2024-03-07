@@ -401,7 +401,7 @@ In this section, you will use an automation script, which we provide in the lab 
 
         /home/techzone/liberty_admin_pot/lab-scripts/setupDynamicRouting.sh
 
-    Once the command is completed, the pug-in configuration files are  created and configured for the IHS server.
+    Once the command is completed, the plug-in configuration files are  created and configured for the IHS server.
  
     ![Text Description automatically
  generated](./images/media/new-image004.png)
